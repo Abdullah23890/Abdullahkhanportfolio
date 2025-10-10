@@ -35,6 +35,28 @@ fadeElements.forEach(el => {
   fadeObserver.observe(el);
 });
 
+// slider
+
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3000, // 3 seconds
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1, // Small devices
+    },
+    745: {
+      slidesPerView: 2, // Medium devices
+    },
+    1024: {
+      slidesPerView: 3, // Large devices
+    }
+  }
+});
+
 // canvas animation
 
   const canvas = document.getElementById('spaceCanvas');
