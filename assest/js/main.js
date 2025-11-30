@@ -57,60 +57,61 @@ var swiper = new Swiper(".mySwiper", {
   }
 });
 
-// // canvas animation
+// canvas animation
 
-//   const canvas = document.getElementById('spaceCanvas');
-//     const ctx = canvas.getContext('2d');
+  const canvas = document.getElementById('spaceCanvas');
+    const ctx = canvas.getContext('2d');
 
-//     // Resize canvas
-//     function resizeCanvas() {
-//       canvas.width = window.innerWidth;
-//       canvas.height = window.innerHeight;
-//     }
+    // Resize canvas
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
 
-//     resizeCanvas();
-//     window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-//     // Planets
-//     const planetCount = 30;
-//     const planets = [];
+    // Planets
+    const planetCount = 30;
+    const planets = [];
 
-//     for (let i = 0; i < planetCount; i++) {
-//       planets.push({
-//         x: Math.random() * canvas.width,
-//         y: Math.random() * canvas.height,
-//         radius: Math.random() * 5 + 2,
-//         color: getRandomColor(),
-//         dx: (Math.random() - 0.5) * 1,
-//         dy: (Math.random() - 0.5) * 1
-//       });
-//     }
+    for (let i = 0; i < planetCount; i++) {
+      planets.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 5 + 2,
+        color: getRandomColor(),
+        dx: (Math.random() - 0.5) * 1,
+        dy: (Math.random() - 0.5) * 1
+      });
+    }
 
-//     function getRandomColor() {
-//       const colors = ['red', 'lime', 'yellow', 'cyan', 'magenta', 'orange', 'white', 'lightblue', 'violet'];
-//       return colors[Math.floor(Math.random() * colors.length)];
-//     }
+    function getRandomColor() {
+      const colors = ['red', 'lime', 'yellow', 'cyan', 'magenta', 'orange', 'white', 'lightblue', 'violet'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
 
-//     function draw() {
-//       ctx.fillStyle = '#001f3f'; // Background color
-//       ctx.fillRect(0, 0, canvas.width, canvas.height);
+    function draw() {
+      ctx.fillStyle = '#001f3f'; // Background color
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-//       for (let p of planets) {
-//         p.x += p.dx;
-//         p.y += p.dy;
+      for (let p of planets) {
+        p.x += p.dx;
+        p.y += p.dy;
 
-//         // Bounce from walls
-//         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-//         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        // Bounce from walls
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
 
-//         ctx.beginPath();
-//         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-//         ctx.fillStyle = p.color;
-//         ctx.fill();
-//       }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      }
 
-//       requestAnimationFrame(draw);
-//     }
+      requestAnimationFrame(draw);
+    }
 
-//     draw();
+    draw();
+
 
